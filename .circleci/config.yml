@@ -7,5 +7,5 @@ workflows:
     jobs:
       - slack/approval-notification:
           message: Bu ci olur, ama cimbom şampiyon olamaz
-          webhook: xxxx38VB
+        
 
