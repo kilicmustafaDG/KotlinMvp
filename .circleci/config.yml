@@ -1,16 +1,11 @@
-
-jobs:
-  build:
-    steps:
-      - slack/notify:
-          color: '#42e2f4'
-          message: Bu ci olur, ama cimbom şampiyon olamaz
-          webhook: https://hooks.slack.com/services/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
 orbs:
-   android: circleci/android@0.2.0
-   slack: circleci/slack@3.4.2
+  android: circleci/android@0.2.0
+  slack: circleci/slack@3.4.2
 version: 2.1
 workflows:
   your-workflow:
     jobs:
-      - build
+      - slack/approval-notification:
+          message: Bu ci olur, ama cimbom şampiyon olamaz
+          webhook: https://hooks.slack.com/services/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
+
