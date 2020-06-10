@@ -11,3 +11,13 @@ jobs:
       - checkout
       - run:
           command: ./gradlew build
+
+orbs:
+  slack: circleci/slack@x.y.z
+version: 2.1
+workflows:
+  your-workflow:
+    jobs:
+      - slack/approval-notification:
+          message: Bu ci olur, ama cimbom şampiyon olamaz
+          webhook: webhook
